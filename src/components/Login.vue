@@ -15,7 +15,7 @@
   </div>
 </template>
 <script>
-import axios from 'axios'
+
 export default {
   data() {
     return {
@@ -28,14 +28,16 @@ export default {
   methods: {
      loginInto()
 {     
-   axios.post('https://private-anon-205cf591c3-devlabwerkslis.apiary-proxy.com/v1.0/signin',this.form)
-   .then(response =>{
-     console.log(response)
-     let token = response.data.access_token
-    localStorage.setItem('acess_token',token);
-    // this.$store.dispatch('loginInto', this.form)
-     this.$router.push('/dash')
-   });
+//    axios.post('https://private-anon-205cf591c3-devlabwerkslis.apiary-proxy.com/v1.0/signin',this.form)
+//    .then(response =>{
+//      console.log(response)
+//      let token = response.data.access_token
+//     localStorage.setItem('acess_token',token);
+   
+     this.$store.dispatch('loginInto', this.form)
+     .then (()=> this.$router.push('/dash'))
+     
+  // });
 }
   },
 };

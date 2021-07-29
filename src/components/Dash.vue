@@ -10,8 +10,7 @@
 </template>
 
 <script>
-
-import axios from 'axios'
+ import axios from 'axios'
 export default{
    data(){
        return {list:undefined}
@@ -25,7 +24,10 @@ export default{
           console.log(res.data.data)
           this.list = res.data.data
         })
-        // this.$store.dispatch('loadData')
-    }
+    // this.$store.dispatch('loadData')
+     },
+    //  computed: mapState([
+    //      'list'
+    //  ])
 }
 </script>
